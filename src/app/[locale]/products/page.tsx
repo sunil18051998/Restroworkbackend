@@ -3,6 +3,7 @@ import Image from "next/image";
 import '../../common.css';
 import { JsonObject } from "payload";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 async function getProducts(locale: string = "en") {
   const res = await fetch(
@@ -75,6 +76,7 @@ export default async function ProductsPage() {
         ))}
       </div>
     </div>
+    <Footer />
     </>
     
   );

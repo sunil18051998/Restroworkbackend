@@ -1,9 +1,33 @@
+"use client";
+
 import React from "react";
 import { Users, Target, Heart } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import '../../common.css';
+import Footer from "@/components/Footer";
+import { useParams } from "next/navigation";
 
 export default function AboutUs() {
+  const params = useParams();
+  const localeParam = params?.locale;
+  const locale = Array.isArray(localeParam) ? localeParam[0] : localeParam || "en";
+
+    const translations: { [key: string]: { title: string; mission: string } } = {
+    en: {
+      title: "About ShopSmart",
+      mission: "Our mission is to bring quality products to your doorstep with trust and care.",
+      // ...other strings
+    },
+    de: {
+      title: "Über ShopSmart",
+      mission: "Unsere Mission ist es, Qualitätsprodukte mit Vertrauen und Sorgfalt zu Ihnen zu bringen.",
+      // ...other strings
+    },
+    // Add more locales
+  };
+
+  const t = translations[locale] || translations.en;
+
   return (
     <>
     <Navbar />
@@ -12,11 +36,10 @@ export default function AboutUs() {
       <section className="bg-white py-20 shadow-sm">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="text-blue-600">ShopSmart</span>
+            {t.title}
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We’re here to make online shopping simple, affordable, and enjoyable.  
-            Our mission is to bring quality products to your doorstep with trust and care.
+            {t.mission}
           </p>
         </div>
       </section>
@@ -102,6 +125,7 @@ export default function AboutUs() {
         </a>
       </section>
     </div>
+    <Footer />
     </>
     
   );

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import '../../common.css';
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -69,6 +70,7 @@ export default function ContactPage() {
       </form>
       {status && <p className="mt-4">{status}</p>}
     </main>
+    <Footer />
     </>
     
   );
