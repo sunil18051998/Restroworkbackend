@@ -1,67 +1,63 @@
-# Payload Blank Template
+📖 Project Description
 
-This template comes configured with the bare minimum to get started on anything you need.
+ShopSmart is a modern e-commerce web application built with Next.js and Payload CMS.
+It is designed to deliver a seamless shopping experience across both desktop and mobile devices, offering a robust, scalable, and customizable platform for online retailers.
 
-## Quick start
+⚡ Setup Instructions
 
-This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
+Follow these steps to run the project locally:
 
-## Quick Start - local setup
+# Clone the repository
+git clone https://github.com/your-username/shopsmart.git
 
-To spin up this template locally, follow these steps:
+# Navigate into the project folder
+cd shopsmart
 
-### Clone
+# Install dependencies
+npm install
+# or
+yarn install
 
-After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+# Start the development server
+npm run dev
+# or
+yarn dev
 
-### Development
 
-1. First [clone the repo](#clone) if you have not done so already
-2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URI` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
+Once the server is running, open http://localhost:3000
+ in your browser.
 
-3. `pnpm install && pnpm dev` to install dependencies and start the dev server
-4. open `http://localhost:3000` to open the app in your browser
+🗂 CMS Modelling Choices
 
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+ShopSmart uses Payload CMS to manage content due to its flexibility, scalability, and ease of use.
 
-#### Docker (Optional)
+The CMS model includes the following entities:
 
-If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
+Products – Manage product details like title, description, price, stock, and images
 
-To do so, follow these steps:
+Categories – Organize products into categories for easy navigation
 
-- Modify the `MONGODB_URI` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
-- Modify the `docker-compose.yml` file's `MONGODB_URI` to match the above `<dbname>`
-- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
+Pages – Create custom content pages (e.g., About, Contact)
 
-## How it works
+Blocks – Reusable content sections for modular page building
 
-The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+This structure allows for a robust and customizable content experience.
 
-### Collections
+✏️ Creating & Editing Pages and Blocks
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
+To create or edit content in ShopSmart:
 
-- #### Users (Authentication)
+Log in to the Payload CMS dashboard at http://localhost:3000/admin
 
-  Users are auth-enabled collections that have access to the admin panel.
+Navigate to the Pages or Blocks section
 
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+Click Create New to add a page or block
 
-- #### Media
+Fill in the required fields and configure settings as needed
 
-  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
+Save & Publish your changes
 
-### Docker
+🚀 Demo
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
-
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
-
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
-
-## Questions
-
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+You can try out the live demo of ShopSmart here:
+👉 [Insert Demo Link]
