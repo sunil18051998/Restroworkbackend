@@ -72,6 +72,7 @@ export interface Config {
     products: Product;
     contacts: Contact;
     pages: Page;
+    homepage: Homepage;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +84,7 @@ export interface Config {
     products: ProductsSelect<false> | ProductsSelect<true>;
     contacts: ContactsSelect<false> | ContactsSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    homepage: HomepageSelect<false> | HomepageSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -225,6 +227,40 @@ export interface Page {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage".
+ */
+export interface Homepage {
+  id: string;
+  locale: 'de' | 'en' | 'fr';
+  heroTitle: string;
+  heroDesc?: string | null;
+  cta?: string | null;
+  whyTitle?: string | null;
+  features?:
+    | {
+        icon?: ('shopping-cart' | 'truck' | 'shield-check' | 'star') | null;
+        title?: string | null;
+        desc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  testimonialsTitle?: string | null;
+  testimonials?:
+    | {
+        name?: string | null;
+        feedback?: string | null;
+        img?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaTitle?: string | null;
+  ctaDesc?: string | null;
+  ctaBtn?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -249,6 +285,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'homepage';
+        value: string | Homepage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -376,6 +416,39 @@ export interface PagesSelect<T extends boolean = true> {
         keywords?: T;
         ogImage?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage_select".
+ */
+export interface HomepageSelect<T extends boolean = true> {
+  locale?: T;
+  heroTitle?: T;
+  heroDesc?: T;
+  cta?: T;
+  whyTitle?: T;
+  features?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        desc?: T;
+        id?: T;
+      };
+  testimonialsTitle?: T;
+  testimonials?:
+    | T
+    | {
+        name?: T;
+        feedback?: T;
+        img?: T;
+        id?: T;
+      };
+  ctaTitle?: T;
+  ctaDesc?: T;
+  ctaBtn?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -7,149 +7,40 @@ import Image from 'next/image'
 import 'react-toastify/dist/ReactToastify.css';
 
 
-type Feature = {
-  icon: React.ReactElement
-  title: string
-  desc: string
-}
-
-type Testimonial = {
-  name: string
-  feedback: string
-  img: string
-}
-
-type Translation = {
-  heroTitle: string
-  heroDesc: string
-  cta: string
-  whyTitle: string
-  features: Feature[]
-  testimonialsTitle: string
-  testimonials: Testimonial[]
-  ctaTitle: string
-  ctaDesc: string
-  ctaBtn: string
-}
-
-type Translations = {
-  [key: string]: Translation
-  en: Translation
-  de: Translation
-  // Add more locales as needed
-}
-
-const translations: Translations = {
-  en: {
-    heroTitle: 'Shop Smarter, Live Better',
-    heroDesc:
-      'Discover our exclusive collection of high-quality products designed to make your life easier and more stylish.',
-    cta: 'Start Shopping',
-    whyTitle: 'Why Choose Us?',
-    features: [
-      {
-        icon: <ShoppingCart className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Wide Selection',
-        desc: 'Explore a diverse range of products to suit every need.',
-      },
-      {
-        icon: <Truck className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Fast Delivery',
-        desc: 'Get your orders delivered quickly and safely.',
-      },
-      {
-        icon: <ShieldCheck className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Secure Shopping',
-        desc: 'Your privacy and payment safety are our top priorities.',
-      },
-      {
-        icon: <Star className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Trusted Reviews',
-        desc: 'See what our happy customers say about us.',
-      },
-    ],
-    testimonialsTitle: 'What Our Customers Say',
-    testimonials: [
-      {
-        name: 'Aarav Sharma',
-        feedback:
-          'Amazing shopping experience! The products are top-notch and delivery was super fast.',
-        img: 'https://i.pravatar.cc/100?img=1',
-      },
-      {
-        name: 'Priya Singh',
-        feedback:
-          'I love the quality and variety available here. Definitely my go-to shopping site!',
-        img: 'https://i.pravatar.cc/100?img=2',
-      },
-    ],
-    ctaTitle: 'Ready to Upgrade Your Shopping?',
-    ctaDesc: 'Join thousands of happy customers who found their perfect products here.',
-    ctaBtn: 'Shop Now',
-  },
-  de: {
-    heroTitle: 'Clever einkaufen, besser leben',
-    heroDesc:
-      'Entdecken Sie unsere exklusive Kollektion hochwertiger Produkte, die Ihr Leben einfacher und stilvoller machen.',
-    cta: 'Jetzt einkaufen',
-    whyTitle: 'Warum uns wählen?',
-    features: [
-      {
-        icon: <ShoppingCart className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Große Auswahl',
-        desc: 'Entdecken Sie eine Vielzahl von Produkten für jeden Bedarf.',
-      },
-      {
-        icon: <Truck className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Schnelle Lieferung',
-        desc: 'Erhalten Sie Ihre Bestellungen schnell und sicher.',
-      },
-      {
-        icon: <ShieldCheck className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Sicheres Einkaufen',
-        desc: 'Ihre Privatsphäre und Zahlungssicherheit sind unsere oberste Priorität.',
-      },
-      {
-        icon: <Star className="mx-auto w-10 h-10 text-blue-600 mb-4" />,
-        title: 'Vertrauenswürdige Bewertungen',
-        desc: 'Lesen Sie, was unsere zufriedenen Kunden sagen.',
-      },
-    ],
-    testimonialsTitle: 'Was unsere Kunden sagen',
-    testimonials: [
-      {
-        name: 'Aarav Sharma',
-        feedback:
-          'Tolles Einkaufserlebnis! Die Produkte sind erstklassig und die Lieferung war super schnell.',
-        img: 'https://i.pravatar.cc/100?img=1',
-      },
-      {
-        name: 'Priya Singh',
-        feedback: 'Ich liebe die Qualität und Vielfalt hier. Definitiv meine Lieblingsseite!',
-        img: 'https://i.pravatar.cc/100?img=2',
-      },
-      {
-        name: 'Rahul Verma',
-        feedback:
-          'Der Kundenservice war ausgezeichnet und die Produkte haben meine Erwartungen übertroffen.',
-        img: 'https://i.pravatar.cc/100?img=3',
-      },
-    ],
-    ctaTitle: 'Bereit für ein besseres Einkaufserlebnis?',
-    ctaDesc:
-      'Schließen Sie sich Tausenden zufriedener Kunden an, die hier ihre perfekten Produkte gefunden haben.',
-    ctaBtn: 'Jetzt shoppen',
-  },
-  // Add more locales as needed
-}
-
 export default async function HomePage(props: {
-  params: Promise<{ locale: keyof typeof translations }>
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await props.params
 
-  const selectedLocale = locale in translations ? locale : 'en'
-  const t = translations[selectedLocale]
+  const selectedLocale = locale ? locale : 'en'
+
+  let apiurl = '';
+  if (selectedLocale === 'de') {
+    apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbd0e3362edf032683830e`
+  } else {
+    apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbcf87362edf03268382a9`
+  }
+
+  const homepgdata = await fetch(
+    apiurl,
+    { cache: 'no-store' }
+  ).then((res) => res.json())
+
+  let t = homepgdata;
+
+  homepgdata.features.map((feature, index) => {
+    if (feature.icon === 'star') {
+      feature.icon = <Star className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+    } else if (feature.icon === 'shopping-cart') {
+      feature.icon = <ShoppingCart className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+    } else if (feature.icon === 'truck') {
+      feature.icon = <Truck className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+    } else if (feature.icon === 'shield-check') {
+      feature.icon = <ShieldCheck className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+    }
+  })
+
+  t.features = homepgdata.features;
 
   return (
     <>

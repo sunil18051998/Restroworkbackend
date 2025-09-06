@@ -14,6 +14,7 @@ import { Media } from './collections/Media'
 import { Products } from './collections/Products'
 import { Contacts } from './collections/Contacts'
 import { Pages } from './collections/Pages'
+import { HomePage } from './collections/HomePage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -25,7 +26,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Products, Contacts, Pages],
+  collections: [Users, Media, Products, Contacts, Pages, HomePage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
