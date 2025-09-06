@@ -59,5 +59,5 @@ To create or edit content in ShopSmart:
 
 🚀 Demo
 
-You can try out the live demo of ShopSmart here:
-👉 [Insert Demo Link]
+You can watch demo of ShopSmart here:
+https://drive.google.com/file/d/19HVYd_9RkS3fMcXMyxzTUmYq_c6dCmJb/view?usp=sharing
