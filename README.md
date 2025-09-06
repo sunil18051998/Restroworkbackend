@@ -8,7 +8,7 @@ It is designed to deliver a seamless shopping experience across both desktop and
 Follow these steps to run the project locally:
 
 # Clone the repository
-git clone https://github.com/your-username/shopsmart.git
+git clone https://github.com/sunil18051998/Restroworkbackend.git
 
 # Navigate into the project folder
 cd shopsmart
