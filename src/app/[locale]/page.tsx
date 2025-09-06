@@ -218,9 +218,9 @@ export default async function HomePage(props: {
         <section className="py-16 text-center">
           <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
           <p className="text-gray-600 mb-6">{t.ctaDesc}</p>
-          <button className="px-8 py-4 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
+          <a href={`/${locale}/products`} target='_blank' className="px-8 py-4 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
             {t.ctaBtn}
-          </button>
+          </a>
         </section>
       </div>
       <Footer />
