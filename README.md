@@ -29,17 +29,17 @@ Once the server is running, open http://localhost:3000
 
 🗂 CMS Modelling Choices
 
-ShopSmart uses Payload CMS to manage content due to its flexibility, scalability, and ease of use.
+ ShopSmart uses Payload CMS to manage content due to its flexibility, scalability, and ease of use.
 
 The CMS model includes the following entities:
 
-Products – Manage product details like title, description, price, stock, and images
+    1. Products – Manage product details like title, description, price, stock, and images
 
-Categories – Organize products into categories for easy navigation
+    2. Categories – Organize products into categories for easy navigation
 
-Pages – Create custom content pages (e.g., About, Contact)
+    3. Pages – Create custom content pages (e.g., About, Contact)
 
-Blocks – Reusable content sections for modular page building
+    4. Blocks – Reusable content sections for modular page building
 
 This structure allows for a robust and customizable content experience.
 
@@ -47,15 +47,15 @@ This structure allows for a robust and customizable content experience.
 
 To create or edit content in ShopSmart:
 
-Log in to the Payload CMS dashboard at http://localhost:3000/admin
+    1. Log in to the Payload CMS dashboard at http://localhost:3000/admin
 
-Navigate to the Pages or Blocks section
+    2. Navigate to the Pages or Blocks section
 
-Click Create New to add a page or block
+    3. Click Create New to add a page or block
 
-Fill in the required fields and configure settings as needed
+    4. Fill in the required fields and configure settings as needed
 
-Save & Publish your changes
+    5. Save & Publish your changes
 
 🚀 Demo
 
