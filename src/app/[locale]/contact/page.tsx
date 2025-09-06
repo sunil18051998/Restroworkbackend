@@ -4,6 +4,8 @@ import { useState } from "react";
 import '../../common.css';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -23,19 +25,26 @@ export default function ContactPage() {
         body: JSON.stringify(form),
       });
       if (res.ok) {
-        setStatus("Thank you! We’ll get back to you soon.");
+        //setStatus("Thank you! We’ll get back to you soon.");
+        toast.success("Thank you! We’ll get back to you soon.");
+        setStatus("")
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatus("Something went wrong.");
+        //setStatus("Something went wrong.");
+        toast.error("Something went wrong.");
+        setStatus("")
       }
     } catch {
-      setStatus("Error submitting form.");
+      //setStatus("Error submitting form.");
+      toast.error("Error submitting form.");
+      setStatus("")
     }
   };
 
   return (
     <>
     <Navbar />
+    <ToastContainer />
       <main className="p-8 max-w-xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
       <form onSubmit={handleSubmit} className="grid gap-4">
@@ -46,6 +55,7 @@ export default function ContactPage() {
           onChange={handleChange}
           className="border rounded p-2"
           required
+          suppressHydrationWarning 
         />
         <input
           type="email"
@@ -55,16 +65,18 @@ export default function ContactPage() {
           onChange={handleChange}
           className="border rounded p-2"
           required
+          suppressHydrationWarning 
         />
         <textarea
           name="message"
-          placeholder="Your Message"
+          placeholder="Your Feedback"
           value={form.message}
           onChange={handleChange}
           className="border rounded p-2"
           required
+          suppressHydrationWarning 
         />
-        <button type="submit" className="rounded bg-blue-600 px-4 py-2 text-white">
+        <button type="submit" className="rounded bg-blue-600 px-4 py-2 text-white" suppressHydrationWarning >
           Submit
         </button>
       </form>

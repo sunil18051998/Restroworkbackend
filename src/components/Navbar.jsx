@@ -33,9 +33,9 @@ export default function Navbar() {
             <a href="/" className="text-gray-700 hover:text-black">
               Home
             </a>
-            <Link href={`/${locale}/products`} className="text-gray-700 hover:text-black">
+            <a href={`/${locale}/products`} className="text-gray-700 hover:text-black">
               Products
-            </Link>
+            </a>
             <a href={`/${locale}/about`} className="text-gray-700 hover:text-black">
               About
             </a>
@@ -45,7 +45,7 @@ export default function Navbar() {
           </div>
 
           {/* Cart (Right Side) */}
-          <div className="hidden md:flex items-center">
+          {/* <div className="hidden md:flex items-center">
             <a
               href="/cart"
               className="flex items-center space-x-1 text-gray-700 hover:text-black"
@@ -53,7 +53,7 @@ export default function Navbar() {
               <ShoppingCart className="w-5 h-5" />
               <span>Cart</span>
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -74,22 +74,22 @@ export default function Navbar() {
             <a href="/" className="block text-gray-700 hover:text-black">
               Home
             </a>
-            <a href="/products" className="block text-gray-700 hover:text-black">
+            <a href={`/${locale}/products`} className="block text-gray-700 hover:text-black">
               Products
             </a>
-            <a href="/about" className="block text-gray-700 hover:text-black">
+            <a href={`/${locale}/about`} className="block text-gray-700 hover:text-black">
               About
             </a>
-            <a href="/contact" className="block text-gray-700 hover:text-black">
+            <a href={`/${locale}/contact`} className="block text-gray-700 hover:text-black">
               Contact
             </a>
-            <a
+            {/* <a
               href="/cart"
               className="flex items-center space-x-1 text-gray-700 hover:text-black"
             >
               <ShoppingCart className="w-5 h-5" />
               <span>Cart</span>
-            </a>
+            </a> */}
           </div>
         </div>
       )}

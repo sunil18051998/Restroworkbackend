@@ -1,8 +1,15 @@
 import React from 'react'
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+const res = await fetch(
+    `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/pages/68badd50a57be4c839d305e5`,
+    { cache: "no-store" }
+  );
+  const data = await res.json();
+
+export let metadata = {
+  description: data.seo?.description,
+  title: data?.title || data.title,
+  keywords: data.seo?.keywords
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

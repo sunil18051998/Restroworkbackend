@@ -118,7 +118,7 @@ export default function AboutUs() {
           that bring joy, comfort, and value to your life.
         </p>
         <a
-          href="/products"
+          href={`/${locale}/products`}
           className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
         >
           Shop Now
