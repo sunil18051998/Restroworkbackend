@@ -1,8 +1,10 @@
 
 
 import "../../common.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+//import Navbar from "@/components/Navbar";
+import Navbar from "../../../components/Navbar";
+//import Footer from "@/components/Footer";
+import Footer from "../../../components/Footer";
 import Productssection from "./products";
 
 async function getProducts(locale: string = "en") {

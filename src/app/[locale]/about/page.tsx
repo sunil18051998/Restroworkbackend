@@ -3,9 +3,10 @@
 import React from "react";
 import { Users, Target, Heart } from "lucide-react";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
+import Navbar from "../../../components/Navbar";
 import "../../common.css";
-import Footer from "@/components/Footer";
+import Footer from "../../../components/Footer";
+//import Footer from "@/components/Footer";
 import { useParams } from "next/navigation";
 
 export default function AboutUs() {
