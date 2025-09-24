@@ -19,10 +19,16 @@ export default async function HomePage(props: {
   if (process && process.env) {
 
     let apiurl = '';
+    // if (selectedLocale === 'de') {
+    //   apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbd0e3362edf032683830e`
+    // } else {
+    //   apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbcf87362edf03268382a9`
+    // }
+
     if (selectedLocale === 'de') {
-      apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbd0e3362edf032683830e`
+      apiurl = '/api/homepage/68bbd0e3362edf032683830e'
     } else {
-      apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbcf87362edf03268382a9`
+      apiurl = '/api/homepage/68bbcf87362edf03268382a9'
     }
 
     const homepgdata = await fetch(
