@@ -1,8 +1,16 @@
-const res = await fetch(
-  `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/pages/68bae9e0a57be4c839d3077e`,
-  { cache: "no-store" }
-);
-const data = await res.json();
+// const res = await fetch(
+//   `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/pages/68bae9e0a57be4c839d3077e`,
+//   { cache: "no-store" }
+// );
+// const data = await res.json();
+
+const data = {
+  seo: {
+    description: '',
+    keywords: ''
+  },
+  title: 'About Us Page'
+};
 
 export const metadata = {
   description: data.seo?.description,

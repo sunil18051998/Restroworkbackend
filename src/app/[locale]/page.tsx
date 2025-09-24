@@ -21,33 +21,33 @@ export default async function HomePage(props: {
     apiurl = `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/homepage/68bbcf87362edf03268382a9`
   }
 
-  const homepgdata = await fetch(
-    apiurl,
-    { cache: 'no-store' }
-  ).then((res) => res.json())
+  // const homepgdata = await fetch(
+  //   apiurl,
+  //   { cache: 'no-store' }
+  // ).then((res) => res.json())
 
-  const t = homepgdata;
+  // const t = homepgdata;
 
-  homepgdata.features.map((feature: any, index: any) => {
-    if (feature.icon === 'star') {
-      feature.icon = <Star className="mx-auto w-10 h-10 text-blue-600 mb-4" />
-    } else if (feature.icon === 'shopping-cart') {
-      feature.icon = <ShoppingCart className="mx-auto w-10 h-10 text-blue-600 mb-4" />
-    } else if (feature.icon === 'truck') {
-      feature.icon = <Truck className="mx-auto w-10 h-10 text-blue-600 mb-4" />
-    } else if (feature.icon === 'shield-check') {
-      feature.icon = <ShieldCheck className="mx-auto w-10 h-10 text-blue-600 mb-4" />
-    }
-  })
+  // homepgdata.features.map((feature: any, index: any) => {
+  //   if (feature.icon === 'star') {
+  //     feature.icon = <Star className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+  //   } else if (feature.icon === 'shopping-cart') {
+  //     feature.icon = <ShoppingCart className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+  //   } else if (feature.icon === 'truck') {
+  //     feature.icon = <Truck className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+  //   } else if (feature.icon === 'shield-check') {
+  //     feature.icon = <ShieldCheck className="mx-auto w-10 h-10 text-blue-600 mb-4" />
+  //   }
+  // })
 
-  t.features = homepgdata.features;
+  // t.features = homepgdata.features;
 
   return (
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto px-4">
-        {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center justify-between py-16">
+
+        {/* <section className="flex flex-col md:flex-row items-center justify-between py-16">
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">{t.heroTitle}</h1>
             <p className="text-gray-600 mb-6">{t.heroDesc}</p>
@@ -66,7 +66,7 @@ export default async function HomePage(props: {
           </div>
         </section>
 
-        {/* Features */}
+
         <section className="py-16">
           <h2 className="text-3xl font-bold text-center mb-10">{t.whyTitle}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -83,7 +83,7 @@ export default async function HomePage(props: {
           </div>
         </section>
 
-        {/* Testimonials */}
+
         <section className="py-16 bg-gray-50">
           <h2 className="text-3xl font-bold text-center mb-10">{t.testimonialsTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -105,14 +105,14 @@ export default async function HomePage(props: {
           </div>
         </section>
 
-        {/* Call To Action */}
+
         <section className="py-16 text-center">
           <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
           <p className="text-gray-600 mb-6">{t.ctaDesc}</p>
           <a href={`/${locale}/products`} target='_blank' className="px-8 py-4 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
             {t.ctaBtn}
           </a>
-        </section>
+        </section> */}
       </div>
       <Footer />
     </>

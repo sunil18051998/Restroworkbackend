@@ -1,8 +1,17 @@
-const res = await fetch(
-  `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/pages/68badbaba57be4c839d3056b`,
-  { cache: "no-store" }
-);
-const data = await res.json();
+// const res = await fetch(
+//   `${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/pages/68badbaba57be4c839d3056b`,
+//   { cache: "no-store" }
+// );
+// const data = await res.json();
+
+
+const data = {
+  seo: {
+    description: '',
+    keywords: ''
+  },
+  title: 'About Us Page'
+};
 
 export const metadata = {
   description: data.seo?.description,
