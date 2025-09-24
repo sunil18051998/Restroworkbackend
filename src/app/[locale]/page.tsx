@@ -26,9 +26,9 @@ export default async function HomePage(props: {
     // }
 
     if (selectedLocale === 'de') {
-      apiurl = '/api/homepage/68bbd0e3362edf032683830e'
+      apiurl = './api/homepage/68bbd0e3362edf032683830e'
     } else {
-      apiurl = '/api/homepage/68bbcf87362edf03268382a9'
+      apiurl = './api/homepage/68bbcf87362edf03268382a9'
     }
 
     const homepgdata = await fetch(
