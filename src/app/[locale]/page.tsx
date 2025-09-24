@@ -26,9 +26,9 @@ export default async function HomePage(props: {
     { cache: 'no-store' }
   ).then((res) => res.json())
 
-  let t = homepgdata;
+  const t = homepgdata;
 
-  homepgdata.features.map((feature, index) => {
+  homepgdata.features.map((feature: any, index: any) => {
     if (feature.icon === 'star') {
       feature.icon = <Star className="mx-auto w-10 h-10 text-blue-600 mb-4" />
     } else if (feature.icon === 'shopping-cart') {
@@ -70,7 +70,7 @@ export default async function HomePage(props: {
         <section className="py-16">
           <h2 className="text-3xl font-bold text-center mb-10">{t.whyTitle}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {t.features.map((feature, i) => (
+            {t.features.map((feature: any, i: any) => (
               <div
                 key={i}
                 className="text-center p-6 bg-white shadow rounded-xl hover:shadow-md transition"
@@ -87,7 +87,7 @@ export default async function HomePage(props: {
         <section className="py-16 bg-gray-50">
           <h2 className="text-3xl font-bold text-center mb-10">{t.testimonialsTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {t.testimonials.map((testimonial, i) => (
+            {t.testimonials.map((testimonial: any, i: any) => (
               <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
                 <div className="flex items-center mb-4">
                   <Image
