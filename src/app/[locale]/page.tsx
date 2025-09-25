@@ -26,9 +26,9 @@ export default async function HomePage(props: {
     // }
 
     if (selectedLocale === 'de') {
-      apiurl = './api/homepage/68d4abe9b35ecd20b8c5a736'
+      apiurl = 'https://restroworkbackend.vercel.app/api/homepage/68d4abe9b35ecd20b8c5a736'
     } else {
-      apiurl = './api/homepage/68d4abb4020c322077332927'
+      apiurl = 'https://restroworkbackend.vercel.app/api/homepage/68d4abb4020c322077332927'
     }
 
     const homepgdata = await fetch(
