@@ -20,7 +20,7 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("Submitting...");
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/contacts`, {
+      const res = await fetch(`https://restroworkbackend.vercel.app/api/contacts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

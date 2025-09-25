@@ -8,4 +8,4 @@ Disallow: /api/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://restroworkbackend.vercel.app/sitemap.xml
