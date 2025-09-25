@@ -11,7 +11,10 @@ Follow these steps to run the project locally:
 git clone https://github.com/sunil18051998/Restroworkbackend.git
 
 # Navigate into the project folder
-cd shopsmart
+cd Restroworkbackend
+
+# Change branch
+git checkout newdev
 
 # Install dependencies
 npm install
@@ -24,7 +27,7 @@ npm run dev
 yarn dev
 
 
-Once the server is running, open http://localhost:3000
+Once the server is running, open https://restroworkbackend.vercel.app/
  in your browser.
 
 🗂 CMS Modelling Choices
@@ -47,7 +50,7 @@ This structure allows for a robust and customizable content experience.
 
 To create or edit content in ShopSmart:
 
-    1. Log in to the Payload CMS dashboard at http://localhost:3000/admin
+    1. Log in to the Payload CMS dashboard at https://restroworkbackend.vercel.app/admin
 
     2. Navigate to the Pages or Blocks section
 
@@ -59,5 +62,5 @@ To create or edit content in ShopSmart:
 
 🚀 Demo
 
-You can try out the live demo of ShopSmart here:
-👉 [Insert Demo Link]
+LIVE link:
+👉 https://restroworkbackend.vercel.app/en
