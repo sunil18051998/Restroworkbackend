@@ -6,10 +6,11 @@
 
 const data = {
   seo: {
-    description: '',
-    keywords: ''
+    description: 'Contact meta description',
+    keywords: 'Contact meta keywords',
+    title: 'Contact meta titles'
   },
-  title: 'About Us Page'
+  title: 'Contact Page'
 };
 
 export const metadata = {

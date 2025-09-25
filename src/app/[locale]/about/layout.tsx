@@ -7,10 +7,11 @@
 
 const data = {
   seo: {
-    description: '',
-    keywords: ''
+    description: 'About Us meta description',
+    keywords: 'About Us meta keywords',
+    title: 'About Us meta titles'
   },
-  title: 'About Us Page'
+  title: 'About Us'
 };
 
 export const metadata = {

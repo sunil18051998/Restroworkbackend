@@ -8,10 +8,11 @@ import React from 'react'
 
 const data = {
   seo: {
-    description: '',
-    keywords: ''
+    description: 'Home page meta description',
+    keywords: 'Home page meta keywords',
+    title: 'Home page meta titles'
   },
-  title: 'About Us Page'
+  title: 'Home Page'
 };
 
 export const metadata = {
